@@ -1,0 +1,64 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+
+.mainFxmlClass {
+    
+}
+
+.fundoTotal{
+    -fx-background-color: #CCE5E1;
+}
+
+.fundoMenu{
+    -fx-background-color: #005A60;
+}
+
+.textFildPadrao{
+    -fx-background-radius: 10px;
+    
+}
+
+.topicosText{
+    -fx-fill: #005A60;
+    -fx-underline: true;        
+}
+
+.bordas_pane{
+    -fx-border-color: #E4EFF0;
+    -fx-border-width: 20px;
+    -fx-border-style: solid;
+    -fx-border-radius: 34px;
+    -fx-background-color: #E4EFF0;
+}
+.adapitaButt{
+    -fx-background-radius: 100px 0px 0px 100px ;
+    
+}
+.combobo{
+    -fx-background-color: #FFFEFE;
+    -fx-background-radius: 0px 100px 100px 0px;
+}
+
+.comboboA{
+    -fx-background-color: #FFFEFE;
+    -fx-background-radius: 100px;
+}
+
+.but_padrao{
+    -fx-background-color:#82BAAD;
+    -fx-background-radius: 100px;
+    -fx-cursor: hand;
+    -fx-padding: 3px 40px 3px 40px;
+    -fx-text-fill: #FFFEFE;
+    
+}
+.pane_ancora{
+    -fx-background-color:#0A535C;
+    -fx-border-radius: 10px;
+    -fx-border-style: solid;
+    -fx-border-color:#0A535C;
+}
+

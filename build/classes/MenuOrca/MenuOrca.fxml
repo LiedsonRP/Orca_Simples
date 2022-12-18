@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="fundoTotal" stylesheets="@../Style/MenuStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuOrca.MenuOrcaController">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="272.0" styleClass="fundoMenu" stylesheets="@../Style/MenuStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="butCadastrar" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" onAction="#cadastra_Iten" prefHeight="35.0" prefWidth="223.0" styleClass="but_padrao" stylesheets="@../Style/MenuStyle.css" text="Cadastrar Insumo Simples" />
+            <Button layoutX="14.0" layoutY="167.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="223.0" styleClass="but_padrao" stylesheets="@../Style/MenuStyle.css" text="Cadastrar Insumo Composto">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <Button layoutX="14.0" layoutY="218.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="223.0" styleClass="but_padrao" stylesheets="@../Style/MenuStyle.css" text="Cadastrar Embalagem" />
+            <Button layoutX="14.0" layoutY="265.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="223.0" styleClass="but_padrao" stylesheets="@../Style/MenuStyle.css" text="Cadastrar Produto" />
+            <MenuBar layoutX="14.0" layoutY="332.0" prefHeight="31.0" prefWidth="223.0" styleClass="menuBox">
+              <menus>
+                <Menu mnemonicParsing="false" text="            Cadastrar">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Insumo Simples" />
+                        <MenuItem mnemonicParsing="false" text="Insumo Composto" />
+                        <MenuItem fx:id="abaEmbalagem" mnemonicParsing="false" onAction="#cadastra_Iten" text="Embalagem" />
+                        <MenuItem mnemonicParsing="false" text="Produto" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <MenuBar layoutX="14.0" layoutY="375.0" prefHeight="31.0" prefWidth="223.0" styleClass="menuBox">
+               <menus>
+                  <Menu mnemonicParsing="false" text="               Tabela            ">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Insumo Simples" />
+                        <MenuItem mnemonicParsing="false" text="Insumo Composto" />
+                        <MenuItem mnemonicParsing="false" text="Embalagem" />
+                        <MenuItem mnemonicParsing="false" text="Produto" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

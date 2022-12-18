@@ -1,0 +1,35 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.paneTable{
+    -fx-background-color: #0A535C;
+}
+
+.texth1{
+    
+    -fx-underline: true; 
+}
+
+.text_butt{
+    -fx-cursor: hand;
+    
+}
+
+.but_padrao{
+    -fx-background-color:#82BAAD;
+    -fx-background-radius: 100px;
+    
+}
+
+.inputText{
+    
+    -fx-background-radius: 10px;
+}
+
+
+
