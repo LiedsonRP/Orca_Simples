@@ -7,7 +7,6 @@ package TelaCad_Produto;
 
 
 import TelaCad_composto.*;
-import TelaCad_InsuSimples.*;
 import OpcoesDeCad.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package TelaCad_InsuSimples;
+package TelaCad_Simples;
 
+import MenuOrca.menuOrg;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -21,7 +22,7 @@ import javafx.collections.ObservableList;
  *
  * @author Acer
  */
-public class TelaCad_insumoSimplesController implements Initializable {
+public class TelaCad_insumoSimplesController extends menuOrg implements Initializable {
 
     /**
      * Initializes the controller class.

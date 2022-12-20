@@ -4,8 +4,9 @@
 
 
 
-.mainFxmlClass {
-    
+.samfonaFundo {
+    -fx-background-color: #005A60;
+    -fx-text-fill: #FFFEFE;         
 }
 
 .menuBox{

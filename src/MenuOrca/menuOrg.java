@@ -13,12 +13,17 @@ import javafx.fxml.FXML;
  */
 public class menuOrg {
     @FXML
-    void cadastra_Iten(ActionEvent event) {
+    void cadastra_Embalagem(ActionEvent event) {
         Main_menu.changeScreen(2);
     }
     
     @FXML
     void voltaMenu(ActionEvent event) {
         Main_menu.changeScreen(1);
+    }
+    
+    @FXML
+    void cadastra_Simples(ActionEvent event){
+        Main_menu.changeScreen(3);
     }
 }

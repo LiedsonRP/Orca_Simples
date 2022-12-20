@@ -18,23 +18,28 @@ import javafx.stage.Stage;
  */
 public class Main_menu extends Application {
     
-    static Scene sceneMenu;
+    private static Scene sceneSimples;
     private static Scene sceneOpCad;
+    static Scene sceneMenu;
     static Stage primaryStage;
     
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader menuOrca = new FXMLLoader(getClass().getResource("MenuOrca.fxml"));
         FXMLLoader talaOpcao = new FXMLLoader(getClass().getResource("../TelaCad_embalagem/telaCad_embalagem.fxml"));
+        FXMLLoader telaSimples = new FXMLLoader(getClass().getResource("../TelaCad_Simples/telaCad_simples.fxml"));
         primaryStage = stage;
         
         primaryStage.setTitle("Orçamento Simples");
         
         Parent parentMenu = menuOrca.load();
         Parent parentOpCad = talaOpcao.load();
+        Parent parentSimples = telaSimples.load();
+        
         
         sceneMenu = new Scene(parentMenu);
         sceneOpCad = new Scene(parentOpCad);
+        sceneSimples = new Scene(parentSimples);
         
         
         
@@ -58,6 +63,11 @@ public class Main_menu extends Application {
                 primaryStage.setScene(sceneOpCad);
                 
                  break;
+            case 3:
+                primaryStage.setMaximized(true);
+                primaryStage.setResizable(true);
+                primaryStage.setScene(sceneSimples);
+                break;
         }
     }
 

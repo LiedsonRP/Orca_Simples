@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TitledPane;
 
 /**
  * FXML Controller class
@@ -28,7 +29,21 @@ public class MenuOrcaController extends menuOrg implements Initializable {
     
     @FXML
     private MenuItem abaEmbalagem;
+    
+    @FXML
+    private Button accordionComposto;
 
+    @FXML
+    private Button accordionEmbalagem;
+
+    @FXML
+    private Button accordionProduto;
+
+    @FXML
+    private Button accordionSImples;
+
+    @FXML
+    private TitledPane arcoCad;
     
     
     @Override
