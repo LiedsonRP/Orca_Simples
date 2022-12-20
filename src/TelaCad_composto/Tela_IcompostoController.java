@@ -4,6 +4,7 @@
  */
 package TelaCad_composto;
 
+import MenuOrca.menuOrg;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,18 +16,22 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author Acer
  */
-public class Tela_IcompostoController implements Initializable {
+public class Tela_IcompostoController extends menuOrg implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     /*combobox A*/
+    @FXML
+    private Button butCancelar;
+    
     @FXML
     private ComboBox<unidades> Cb_UnI;
     

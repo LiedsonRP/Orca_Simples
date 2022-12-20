@@ -26,4 +26,12 @@ public class menuOrg {
     void cadastra_Simples(ActionEvent event){
         Main_menu.changeScreen(3);
     }
+    @FXML
+    void cadastra_Composto(ActionEvent event){
+        Main_menu.changeScreen(4);
+    }
+    @FXML
+    void cadastra_Produto(ActionEvent event){
+        Main_menu.changeScreen(5);
+    }
 }

@@ -60,7 +60,7 @@ public class TelaCad_insumoSimplesController extends menuOrg implements Initiali
         uni.add(metro);
         uni.add(centimetro);
         uni.add(litro);
-        uni.add(mililitro);
+        uni.add(milimetro);
         uni.add(centilitro);
         uni.add(mililitro);
         uni.add(unidade);

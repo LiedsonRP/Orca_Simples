@@ -20,6 +20,8 @@ public class Main_menu extends Application {
     
     private static Scene sceneSimples;
     private static Scene sceneOpCad;
+    private static Scene sceneComposto;
+    private static Scene sceneProduto;
     static Scene sceneMenu;
     static Stage primaryStage;
     
@@ -28,6 +30,8 @@ public class Main_menu extends Application {
         FXMLLoader menuOrca = new FXMLLoader(getClass().getResource("MenuOrca.fxml"));
         FXMLLoader talaOpcao = new FXMLLoader(getClass().getResource("../TelaCad_embalagem/telaCad_embalagem.fxml"));
         FXMLLoader telaSimples = new FXMLLoader(getClass().getResource("../TelaCad_Simples/telaCad_simples.fxml"));
+        FXMLLoader telaComposto = new FXMLLoader(getClass().getResource("../TelaCad_Composto/Tela_Icomposto.fxml"));
+        FXMLLoader telaProduto = new FXMLLoader(getClass().getResource("../TelaCad_Produto/telaCadProduto.fxml"));
         primaryStage = stage;
         
         primaryStage.setTitle("Orçamento Simples");
@@ -35,11 +39,15 @@ public class Main_menu extends Application {
         Parent parentMenu = menuOrca.load();
         Parent parentOpCad = talaOpcao.load();
         Parent parentSimples = telaSimples.load();
+        Parent parentComposto = telaComposto.load();
+        Parent parentProduto = telaProduto.load();
         
         
         sceneMenu = new Scene(parentMenu);
         sceneOpCad = new Scene(parentOpCad);
         sceneSimples = new Scene(parentSimples);
+        sceneComposto = new Scene(parentComposto);
+        sceneProduto = new Scene(parentProduto);
         
         
         
@@ -67,6 +75,16 @@ public class Main_menu extends Application {
                 primaryStage.setMaximized(true);
                 primaryStage.setResizable(true);
                 primaryStage.setScene(sceneSimples);
+                break;
+            case 4:
+                primaryStage.setMaximized(true);
+                primaryStage.setResizable(true);
+                primaryStage.setScene(sceneComposto);
+                break;
+            case 5:
+                primaryStage.setMaximized(true);
+                primaryStage.setResizable(true);
+                primaryStage.setScene(sceneProduto);
                 break;
         }
     }

@@ -4,20 +4,28 @@
  */
 package TelaCad_Produto;
 
+import MenuOrca.menuOrg;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author Acer
  */
-public class TelaCadProdutoController implements Initializable {
+public class TelaCadProdutoController extends menuOrg implements Initializable {
 
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private Button butCancela;
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

@@ -75,7 +75,7 @@
                </font>
             </Text>
             <TextField layoutX="458.0" layoutY="518.0" prefHeight="30.0" prefWidth="329.0" styleClass="textFildPadrao" AnchorPane.leftAnchor="458.0" />
-            <Button layoutX="69.0" layoutY="573.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="199.0" styleClass="but_padrao" text="Cancelar" AnchorPane.topAnchor="573.0">
+            <Button fx:id="butCancelar" layoutX="69.0" layoutY="573.0" mnemonicParsing="false" onAction="#voltaMenu" prefHeight="46.0" prefWidth="199.0" styleClass="but_padrao" text="Cancelar" AnchorPane.topAnchor="573.0">
                <font>
                   <Font size="22.0" />
                </font>

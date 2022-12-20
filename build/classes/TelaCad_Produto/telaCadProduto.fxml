@@ -78,7 +78,7 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Button layoutX="80.0" layoutY="623.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" styleClass="but_padrao" text="Cancelar">
+            <Button fx:id="butCancela" layoutX="80.0" layoutY="623.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" styleClass="but_padrao" text="Cancelar">
                <font>
                   <Font size="25.0" />
                </font>
