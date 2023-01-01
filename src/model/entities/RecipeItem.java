@@ -5,10 +5,18 @@
 package model.entities;
 
 /**
- * Classe que representa um item usado numa receita
- * @author lieds
+ * Classe que permite a ligação entre dois itens
+ * @author lieds 
  */
-public class RecipeItem extends Link {
+public class RecipeItem{
+    /**
+     * Item que iniciou a ligação
+     */
+    private Item linkOwner;
+    /**
+     * Item que recebeu a ligação
+     */
+    private Item linkedWith;     
     /**
      * Quantidade usada do item
      */
@@ -21,16 +29,45 @@ public class RecipeItem extends Link {
      * Custo proporcional do item pela quantidade usada
      */   
     public double proportional_cost;
-    
+    /**
+     * Método construtor do link
+     * @param linkOwner item que iniciou a ligação
+     * @param linkedWith item que recebeu a ligação
+     */
+    public RecipeItem(Item linkOwner, Item linkedWith) {        
+        this.linkedWith = linkedWith;
+        this.linkOwner = linkOwner;
+    }    
     /**
      * Método construtor do item da receita
      * @param linkOwner item que possui a receita
      * @param linkedWith item que será usado na receita
+     * @param quant_used quantidade usada na receita
+     * @param unit_measurement unidade de medida de referência
      */
-    public RecipeItem(Item linkOwner, Item linkedWith) {
-        super(linkOwner, linkedWith);
+    public RecipeItem(Item linkOwner, Item linkedWith, double quant_used, String unit_measurement) {
+        this.linkedWith = linkedWith;
+        this.linkOwner = linkOwner;
+        this.quant_used = quant_used;
+        this.unit_measurement = unit_measurement;
     }
 
+    public Item getLinkedWith() {
+        return linkedWith;
+    }
+
+    public void setLinkedWith(Item linkedWith) {
+        this.linkedWith = linkedWith;
+    }
+
+    public Item getLinkOwner() {
+        return linkOwner;
+    }
+
+    public void setLinkOwner(Item linkOwner) {
+        this.linkOwner = linkOwner;
+    }        
+    
     public double getQuant_used() {
         return quant_used;
     }
@@ -54,4 +91,12 @@ public class RecipeItem extends Link {
     public void setProportional_cost(double proportional_cost) {
         this.proportional_cost = proportional_cost;
     }        
+    /**
+     * Retorna o registro que representa o link entre os itens
+     * @return String
+     */
+    public String generateRegister() {
+        String register = this.getLinkedWith().getName() + "," + this.quant_used + "," + this.getUnit_measurement();
+        return register;
+    }
 }

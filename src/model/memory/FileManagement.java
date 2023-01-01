@@ -13,20 +13,45 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe utilitária que permite gerenciar os arquivos do sistema
  * @author lieds
  */
 public class FileManagement {
-
+    /**
+     * Deleta um arquivo específico de um diretório
+     * @param file_path caminho do arquivo
+     */
+    public static void deleteFile(String file_path) {
+        try {
+            Path path = Paths.get(file_path);
+            Files.deleteIfExists(path);
+        } catch (IOException ex) {
+            Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+        }
+    }
+    /**
+     * Verifica se um arquivo específico existe, retornando true ou false
+     * @param file_path caminho do arquivo
+     * @return Boolena
+     */
     public static boolean checkFileExists(String file_path) {
         Path path = Paths.get(file_path);
         return Files.exists(path);
     }
-
-    public static void createFile(String file_name) {
-
+    /**
+     * Cria um novo arquivo num diretório especificado
+     * @param file_path caminho onde o arquivo deverá ser criado     
+     */
+    public static void createFile(String file_path) {
+        try {
+            Path path = Paths.get(file_path);
+            Files.createFile(path);
+        } catch (IOException ex) {
+            Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+        }
     }
-
     /**
      * Retorna uma lista contendo as linhas de um arquivo de texto
      *
@@ -42,7 +67,5 @@ public class FileManagement {
             Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-
     }
-
 }

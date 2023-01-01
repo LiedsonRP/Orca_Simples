@@ -58,4 +58,15 @@ public class SimpleFoodstock extends Item {
     public void setUnit_cost(double unit_cost) {
         this.unit_cost = unit_cost;
     }        
+    /**
+     * Retorna o registro que representa o insumo simples na memória
+     * @return String
+     */
+    public String generateRegister() {
+        String simpleFoodstockInfo = this.getName() + "," + this.getType() + "," 
+                + this.getUnit_measurement() + "," + this.quant_purchased + ","
+                + this.getValue_payed() + ";" + this.createLinkedFromRegister();                
+        
+        return simpleFoodstockInfo;
+    }
 }

@@ -7,7 +7,7 @@ package model.memory;
 import java.util.ArrayList;
 import java.util.Collection;
 import model.entities.Item;
-import model.entities.Link;
+import model.entities.RecipeItem;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,7 +41,7 @@ public class ItensMapTest {
 
         //Configura a massa
         Item massa = new Item("Massa");
-        Link massa_manteiga = new Link(massa, manteiga);
+        RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
         massa.addLink(massa_manteiga);
         manteiga.receiveLink(massa_manteiga);
 
@@ -58,7 +58,7 @@ public class ItensMapTest {
 
         //Configura a massa
         Item massa = new Item("Massa");
-        Link massa_manteiga = new Link(massa, manteiga);
+        RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
 
         massa.addLink(massa_manteiga);
         manteiga.receiveLink(massa_manteiga);
@@ -77,7 +77,7 @@ public class ItensMapTest {
 
         //Configura a massa
         Item massa = new Item("Massa");
-        Link massa_manteiga = new Link(massa, manteiga);
+        RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
 
         massa.addLink(massa_manteiga);
         manteiga.receiveLink(massa_manteiga);
@@ -111,9 +111,9 @@ public class ItensMapTest {
 
             //configura a massa e suas ligações
             Item massa = new Item("Massa");
-            Link massa_manteiga = new Link(massa, manteiga);
-            Link massa_leite = new Link(massa, leite);
-            Link massa_embalagem = new Link(massa, embalagem);
+            RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
+            RecipeItem massa_leite = new RecipeItem(massa, leite);
+            RecipeItem massa_embalagem = new RecipeItem(massa, embalagem);
 
             massa.addLink(massa_manteiga);
             massa.addLink(massa_embalagem);
@@ -212,9 +212,9 @@ public class ItensMapTest {
 
         Item massa = new Item("Massa");
 
-        Link link1 = new Link(massa, manteiga);
-        Link link2 = new Link(massa, leite);
-        Link link3 = new Link(massa, embalagem);
+        RecipeItem link1 = new RecipeItem(massa, manteiga);
+        RecipeItem link2 = new RecipeItem(massa, leite);
+        RecipeItem link3 = new RecipeItem(massa, embalagem);
 
         massa.addLink(link1);
         massa.addLink(link2);
@@ -222,10 +222,10 @@ public class ItensMapTest {
 
         Item bolo = new Item("Bolo");
 
-        Link link4 = new Link(bolo, manteiga);
-        Link link5 = new Link(bolo, leite);
-        Link link6 = new Link(bolo, embalagem);
-        Link link7 = new Link(bolo, massa);
+        RecipeItem link4 = new RecipeItem(bolo, manteiga);
+        RecipeItem link5 = new RecipeItem(bolo, leite);
+        RecipeItem link6 = new RecipeItem(bolo, embalagem);
+        RecipeItem link7 = new RecipeItem(bolo, massa);
 
         bolo.addLink(link4);
         bolo.addLink(link5);
@@ -279,9 +279,9 @@ public class ItensMapTest {
 
         Item massa = new Item("Massa");
 
-        Link link1 = new Link(massa, manteiga);
-        Link link2 = new Link(massa, leite);
-        Link link3 = new Link(massa, embalagem);
+        RecipeItem link1 = new RecipeItem(massa, manteiga);
+        RecipeItem link2 = new RecipeItem(massa, leite);
+        RecipeItem link3 = new RecipeItem(massa, embalagem);
 
         massa.addLink(link1);
         massa.addLink(link3);
@@ -314,9 +314,9 @@ public class ItensMapTest {
         //Modificação do identificador
         Item newMassa3 = new Item("Massa Surpresa");
 
-        Link link4 = new Link(newMassa3, manteiga);
-        Link link5 = new Link(newMassa3, leite);
-        Link link6 = new Link(newMassa3, embalagem);
+        RecipeItem link4 = new RecipeItem(newMassa3, manteiga);
+        RecipeItem link5 = new RecipeItem(newMassa3, leite);
+        RecipeItem link6 = new RecipeItem(newMassa3, embalagem);
 
         newMassa3.addLink(link4);
         newMassa3.addLink(link5);

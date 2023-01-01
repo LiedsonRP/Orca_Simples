@@ -44,4 +44,14 @@ public class Product extends Item {
     public void setMaterial_cost(double material_cost) {
         this.material_cost = material_cost;
     }            
+    /**
+     * Retorna o registro que representa o produto na memória
+     * @return String
+     */
+    public String generateRegister() {
+        String productInfo = this.getName() + "," + this.getType() + "," 
+                + this.getUnit_measurement() + "," + this.quant_produced + ";" + this.createLinkedToRegister();                
+        
+        return productInfo;
+    }
 }

@@ -5,34 +5,34 @@
 package model.memory;
 
 import model.entities.Item;
-import model.entities.Link;
+import model.entities.RecipeItem;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Classe utilitária que permite a manipulação da estrutura de grafos dos itens,
- * sendo formada pelos componentes:
- *
- * - Item: Representado pela classe Item, trata-se dos nós(Node) do mapa de
- * gráfico 
- * 
- * - Link: Trata-se da ligação entre dois itens, permitindo o
- * relacionamento 
- * 
- * - Mapa: variável onde fica armazenado os itens e seus
- * relacionamentos
- *
- * O princípio desta estrutura de dados é que a modificação de um item afeta
- * outros cadastrados que tenham tido um relacionamento com este, por isso
- * internamente cada modificação além de afetar o item em si, também afeta os
- * links criados por ele e/ou feitos com ele, sendo os principais métodos:
- *
- * - Adição de itens - Deleção de itens - Modificação de itens - Seleção de item
- * específico - Seleção de todos o itens do mapa - Verifica se o item está no
- * mapa - Verifica se os itens possuem ligação
- *
- * Na implementação do mapa foi utilizado a classe HashMap, de forma a facilitar
- * o acesso dos itens por meio de um identificador.
+ sendo formada pelos componentes:
+
+ - Item: Representado pela classe Item, trata-se dos nós(Node) do mapa de
+ gráfico 
+ 
+ - RecipeItem: Trata-se da ligação entre dois itens, permitindo o
+ relacionamento 
+ 
+ - Mapa: variável onde fica armazenado os itens e seus
+ relacionamentos
+
+ O princípio desta estrutura de dados é que a modificação de um item afeta
+ outros cadastrados que tenham tido um relacionamento com este, por isso
+ internamente cada modificação além de afetar o item em si, também afeta os
+ links criados por ele e/ou feitos com ele, sendo os principais métodos:
+
+ - Adição de itens - Deleção de itens - Modificação de itens - Seleção de item
+ específico - Seleção de todos o itens do mapa - Verifica se o item está no
+ mapa - Verifica se os itens possuem ligação
+
+ Na implementação do mapa foi utilizado a classe HashMap, de forma a facilitar
+ o acesso dos itens por meio de um identificador.
  *
  * @author lieds
  */
@@ -58,7 +58,7 @@ public final class ItensMap {
             map.put(item.getName(), item);
 
             if (!item.getLinkedTo().isEmpty()) { //checa se o item possui uma ligação configurada na criação
-                for (Link link : item.getLinkedTo()) {
+                for (RecipeItem link : item.getLinkedTo()) {
                     this.linkItens(link);
                 }
             }
@@ -73,8 +73,8 @@ public final class ItensMap {
      * @param link objeto de link contendo o oldItem que iniciou a ligação e o
      * que recebeu
      */
-    private void linkItens(ArrayList<Link> linkList) {
-        for (Link link : linkList) {
+    private void linkItens(ArrayList<RecipeItem> linkList) {
+        for (RecipeItem link : linkList) {
             this.linkItens(link);
         }
     }
@@ -84,7 +84,7 @@ public final class ItensMap {
      * @param link objeto de link contendo o oldItem que iniciou a ligação e o
      * que recebeu
      */
-    private void linkItens(Link link) {
+    private void linkItens(RecipeItem link) {
 
         if (this.isItemInMap(link.getLinkOwner()) && this.isItemInMap(link.getLinkedWith())) {//verifica se os itens existem                                                                    
             if (!this.checkItensIsLinked(link.getLinkOwner(), link.getLinkedWith())) { //verifica se os itens já possuem uma ligação               
@@ -142,8 +142,8 @@ public final class ItensMap {
      * @param linksToBeDeletedList lista de links que serão deletados nos itens
      * que receberam a ligação
      */
-    private void deleteLinksUsingLinkedTo(ArrayList<Link> linksToBeDeletedList) {
-        for (Link link : linksToBeDeletedList) {
+    private void deleteLinksUsingLinkedTo(ArrayList<RecipeItem> linksToBeDeletedList) {
+        for (RecipeItem link : linksToBeDeletedList) {
             link.getLinkedWith().removeLinkFromLinkedFrom(link);
         }
     }
@@ -153,8 +153,8 @@ public final class ItensMap {
      * @param linksToBeDeletedList lista de links que serão deletados nos itens
      * que iniciaram a ligação
      */
-    private void deleteLinksUsingLinkedFrom(ArrayList<Link> linksToBeDeletedList) {
-        for (Link link : linksToBeDeletedList) {
+    private void deleteLinksUsingLinkedFrom(ArrayList<RecipeItem> linksToBeDeletedList) {
+        for (RecipeItem link : linksToBeDeletedList) {
             link.getLinkOwner().removeLinkFromLinkedTo(link);
         }
     }
@@ -187,11 +187,11 @@ public final class ItensMap {
      * @param newLinkList lista contendo a nova configuração de ligações
      * @param oldLinkList lista contendo a antiga configuração de ligações
      */
-    private void updateItemLinks(ArrayList<Link> newLinkList, ArrayList<Link> oldLinkList) {
+    private void updateItemLinks(ArrayList<RecipeItem> newLinkList, ArrayList<RecipeItem> oldLinkList) {
         //Checa se houve links deletados
-        ArrayList<Link> linksDeleted = this.getLinksDeletedOnList(newLinkList, oldLinkList);
+        ArrayList<RecipeItem> linksDeleted = this.getLinksDeletedOnList(newLinkList, oldLinkList);
         //Checa de houve links adicionados
-        ArrayList<Link> linksAdded = this.getLinksAddedOnList(newLinkList, oldLinkList);
+        ArrayList<RecipeItem> linksAdded = this.getLinksAddedOnList(newLinkList, oldLinkList);
 
         if (!linksDeleted.isEmpty()) {
             this.deleteLinksUsingLinkedTo(linksDeleted);
@@ -207,8 +207,8 @@ public final class ItensMap {
      * @param oldList antiga lista que será usada como referência
      * @return ArrayList
      */
-    private ArrayList<Link> getLinksAddedOnList(ArrayList<Link> newList, ArrayList<Link> oldList) {
-        ArrayList<Link> linksAdded = ItensMap.getNotFoundLinksOnLists(oldList, newList);                
+    private ArrayList<RecipeItem> getLinksAddedOnList(ArrayList<RecipeItem> newList, ArrayList<RecipeItem> oldList) {
+        ArrayList<RecipeItem> linksAdded = ItensMap.getNotFoundLinksOnLists(oldList, newList);                
         return linksAdded;
     }    
     /**
@@ -217,8 +217,8 @@ public final class ItensMap {
      * @param oldList antiga lista que será usada de referência
      * @return ArrayList
      */
-    private ArrayList<Link> getLinksDeletedOnList(ArrayList<Link> newList, ArrayList<Link> oldList) {
-        ArrayList<Link> linksDeleted = ItensMap.getNotFoundLinksOnLists(newList, oldList);                
+    private ArrayList<RecipeItem> getLinksDeletedOnList(ArrayList<RecipeItem> newList, ArrayList<RecipeItem> oldList) {
+        ArrayList<RecipeItem> linksDeleted = ItensMap.getNotFoundLinksOnLists(newList, oldList);                
         return linksDeleted;
     }
     /**
@@ -228,11 +228,11 @@ public final class ItensMap {
      * @param listReference lista usada como refererência de comparação
      * @return ArrayList
      */
-    private static ArrayList<Link> getNotFoundLinksOnLists(ArrayList<Link> listCompared, ArrayList<Link> listReference) {
+    private static ArrayList<RecipeItem> getNotFoundLinksOnLists(ArrayList<RecipeItem> listCompared, ArrayList<RecipeItem> listReference) {
         boolean linkFound = false;
-        ArrayList<Link> linksNotFound = new ArrayList<>();        
-        for (Link linkReferece : listReference) {            
-            for (Link linkCompared : listCompared) {                
+        ArrayList<RecipeItem> linksNotFound = new ArrayList<>();        
+        for (RecipeItem linkReferece : listReference) {            
+            for (RecipeItem linkCompared : listCompared) {                
                 if (linkCompared.getLinkedWith().getName().equals(linkReferece.getLinkedWith().getName())) {//compara se cada link presente na lista comparada se encontra na lista de referência                    
                     linkFound = true;                    
                     break;
@@ -290,7 +290,7 @@ public final class ItensMap {
      */
     public boolean checkItemIsLinkedTo(Item linkedTo, Item linkedFrom) {
 
-        for (Link link : linkedTo.getLinkedTo()) {
+        for (RecipeItem link : linkedTo.getLinkedTo()) {
             if (link.getLinkedWith().getName().equals(linkedFrom.getName())) {
                 return true;
             }
@@ -307,7 +307,7 @@ public final class ItensMap {
      */
     public boolean checkItemIsLinkedFrom(Item linkedFrom, Item linkedTo) {
 
-        for (Link link : linkedFrom.getLinkedFrom()) {
+        for (RecipeItem link : linkedFrom.getLinkedFrom()) {
             if (link.getLinkOwner().getName().equals(linkedTo.getName())) {
                 return true;
             }

@@ -34,12 +34,12 @@ public class ItemTest {
         System.out.println("addLink");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
-        Link link = new Link(massa, manteiga);
+        RecipeItem link = new RecipeItem(massa, manteiga);
         massa.addLink(link);
         
         assertTrue("A manteiga não foi inserida na lista de ligações feitas!",massa.getLinkedTo().contains(link));
         
-        Link link2 = new Link(massa, manteiga);
+        RecipeItem link2 = new RecipeItem(massa, manteiga);
         massa.addLink(link2);
         
         assertFalse("Um ligação repetida foi cadastrada!", massa.getLinkedTo().contains(link2));        
@@ -54,12 +54,12 @@ public class ItemTest {
         
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
-        Link link = new Link(massa, manteiga);
+        RecipeItem link = new RecipeItem(massa, manteiga);
         manteiga.receiveLink(link);
         
         assertTrue("A massa não foi inserida na lista de ligações recebidas!",manteiga.getLinkedFrom().contains(link));
         
-        Link link2 = new Link(massa, manteiga);
+        RecipeItem link2 = new RecipeItem(massa, manteiga);
         massa.receiveLink(link2);
         
         assertFalse("Um ligação repetida foi cadastrada!", manteiga.getLinkedFrom().contains(link2));        
@@ -73,7 +73,7 @@ public class ItemTest {
         System.out.println("removeLinkFromLinkedFrom");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
-        Link link = new Link(massa, manteiga);
+        RecipeItem link = new RecipeItem(massa, manteiga);
         manteiga.receiveLink(link);
         
         manteiga.removeLinkFromLinkedFrom(link);
@@ -89,7 +89,7 @@ public class ItemTest {
         System.out.println("removeLinkFromLinkedTo");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
-        Link link = new Link(massa, manteiga);
+        RecipeItem link = new RecipeItem(massa, manteiga);
         massa.addLink(link);
         
         massa.removeLinkFromLinkedTo(link);
