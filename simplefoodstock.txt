@@ -1,0 +1,3 @@
+nutela,Alimentício,g,500.0,8.5;
+merengue,Alimentício,g,500.0,8.5;Bolo 15cm,2.0,g/
+ninho,Alimentício,g,500.0,8.5;Massa surpresa,2.0,g/

@@ -4,6 +4,8 @@
  */
 package model.entities;
 
+import java.util.ArrayList;
+
 /**
  * Classe que representa os insumos compostos
  *
@@ -36,6 +38,20 @@ public class CompoundFoodstock extends Item {
     public CompoundFoodstock(String name, String type, String unit_measurement, double quant_produced) {
         super(name, type, unit_measurement);
         this.quant_produced = quant_produced;
+    }    
+    /**
+     * Método construtor dos insumos compostos que permite adiciona a receita diretamente
+     *
+     * @param name nome do insumo compostos
+     * @param type tipo de insumo
+     * @param unit_measurement unidade de medida do insumo composto
+     * @param quant_produced quantidade produzida do insumo composto dada uma receita
+     * @param recipe ArrayList de RecipeItem contendo os itens da receita que forma o insumo composto
+     */
+    public CompoundFoodstock(String name, String type, String unit_measurement, double quant_produced, ArrayList<RecipeItem> recipe) {
+        super(name, type, unit_measurement);
+        this.quant_produced = quant_produced;
+        this.setLinkedTo(recipe);
     }
 
     public double getQuant_produced() {
@@ -61,14 +77,5 @@ public class CompoundFoodstock extends Item {
     public void setUnit_cost(double unit_cost) {
         this.unit_cost = unit_cost;
     }
-    /**
-     * Retorna o registro que representa o insumo composto na memória
-     * @return String
-     */
-    public String generateRegister() {
-        String compoundFoodstock = this.getName() + "," + this.getType() + "," + this.getUnit_measurement()
-                + "," + this.quant_produced + ";" + this.createLinkedFromRegister() + ";" + this.createLinkedToRegister();
-                        
-        return compoundFoodstock;
-    }
+
 }

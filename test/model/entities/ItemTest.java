@@ -27,26 +27,26 @@ public class ItemTest {
     }   
 
     /**
-     * Test of addLink method, of class Item.
+     * Test of addRecipeItem method, of class Item.
      */
     @Test
-    public void testAddLink() {
+    public void testAddRecipeItemtest() {
         System.out.println("addLink");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
         RecipeItem link = new RecipeItem(massa, manteiga);
-        massa.addLink(link);
+        massa.addRecipeItem(link);
         
         assertTrue("A manteiga não foi inserida na lista de ligações feitas!",massa.getLinkedTo().contains(link));
         
         RecipeItem link2 = new RecipeItem(massa, manteiga);
-        massa.addLink(link2);
+        massa.addRecipeItem(link2);
         
         assertFalse("Um ligação repetida foi cadastrada!", massa.getLinkedTo().contains(link2));        
     }
 
     /**
-     * Test of receiveLink method, of class Item.
+     * Test of receiveRecipeItem method, of class Item.
      */
     @Test
     public void testReceiveLink() {
@@ -55,44 +55,44 @@ public class ItemTest {
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
         RecipeItem link = new RecipeItem(massa, manteiga);
-        manteiga.receiveLink(link);
+        manteiga.receiveRecipeItem(link);
         
         assertTrue("A massa não foi inserida na lista de ligações recebidas!",manteiga.getLinkedFrom().contains(link));
         
         RecipeItem link2 = new RecipeItem(massa, manteiga);
-        massa.receiveLink(link2);
+        massa.receiveRecipeItem(link2);
         
         assertFalse("Um ligação repetida foi cadastrada!", manteiga.getLinkedFrom().contains(link2));        
     }
 
     /**
-     * Test of removeLinkFromLinkedFrom method, of class Item.
+     * Test of removeRecipeItemFromLinkedFrom method, of class Item.
      */
     @Test
-    public void testRemoveLinkFromLinkedFrom() {
+    public void testRemoveRecipeItemFromLinkedFrom() {
         System.out.println("removeLinkFromLinkedFrom");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
         RecipeItem link = new RecipeItem(massa, manteiga);
-        manteiga.receiveLink(link);
+        manteiga.receiveRecipeItem(link);
         
-        manteiga.removeLinkFromLinkedFrom(link);
+        manteiga.removeRecipeItemFromLinkedFrom(link);
         
         assertFalse("O link não foi deletado da lista!", manteiga.getLinkedFrom().contains(link));
     }   
 
     /**
-     * Test of removeLinkFromLinkedTo method, of class Item.
+     * Test of removeRecipeItemFromLinkedTo method, of class Item.
      */
     @Test
-    public void testRemoveLinkFromLinkedTo() {
+    public void testRemoveRecipeItemFromLinkedTotestRemoveRecipeItemFromLinkedTo() {
         System.out.println("removeLinkFromLinkedTo");
         Item manteiga = new Item("Manteiga");
         Item massa = new Item("Massa");
         RecipeItem link = new RecipeItem(massa, manteiga);
-        massa.addLink(link);
+        massa.addRecipeItem(link);
         
-        massa.removeLinkFromLinkedTo(link);
+        massa.removeRecipeItemFromLinkedTo(link);
         
         assertFalse("O link não foi deletado da lista!", massa.getLinkedTo().contains(link));
     }       

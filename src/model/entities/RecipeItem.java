@@ -90,13 +90,5 @@ public class RecipeItem{
 
     public void setProportional_cost(double proportional_cost) {
         this.proportional_cost = proportional_cost;
-    }        
-    /**
-     * Retorna o registro que representa o link entre os itens
-     * @return String
-     */
-    public String generateRegister() {
-        String register = this.getLinkedWith().getName() + "," + this.quant_used + "," + this.getUnit_measurement();
-        return register;
-    }
+    }            
 }

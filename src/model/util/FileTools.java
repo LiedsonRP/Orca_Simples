@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model.memory;
+package model.util;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * Classe utilitária que permite gerenciar os arquivos do sistema
  * @author lieds
  */
-public class FileManagement {
+public class FileTools {
     /**
      * Deleta um arquivo específico de um diretório
      * @param file_path caminho do arquivo
@@ -26,7 +26,7 @@ public class FileManagement {
             Path path = Paths.get(file_path);
             Files.deleteIfExists(path);
         } catch (IOException ex) {
-            Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileTools.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
         }
     }
@@ -39,7 +39,7 @@ public class FileManagement {
         Path path = Paths.get(file_path);
         return Files.exists(path);
     }
-    /**
+    /*
      * Cria um novo arquivo num diretório especificado
      * @param file_path caminho onde o arquivo deverá ser criado     
      */
@@ -48,8 +48,7 @@ public class FileManagement {
             Path path = Paths.get(file_path);
             Files.createFile(path);
         } catch (IOException ex) {
-            Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
+            Logger.getLogger(FileTools.class.getName()).log(Level.SEVERE, null, ex);            
         }
     }
     /**
@@ -59,13 +58,31 @@ public class FileManagement {
      * @return List
      */
     public static List<String> readFile(String file_path) {
-        try {
+        try {            
             Path path = Paths.get(file_path);
             List<String> file_lines = Files.readAllLines(path);
+            System.out.println(file_lines.toString());
             return file_lines;
         } catch (IOException ex) {
-            Logger.getLogger(FileManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileTools.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
+    }    
+    /**
+     * Salva um conjunto de informações num arquivo específo 
+     * @param info informações que vai ser escrita no arquivo
+     * @param file_path caminho do arquivo
+     */
+    public static void writeFile(String info, String file_path) {
+        Path path = Paths.get(file_path);
+        System.out.println(info);
+        try {            
+            byte[] bs = info.getBytes();
+            Files.write(path, bs);            
+            
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 }

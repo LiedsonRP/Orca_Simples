@@ -122,8 +122,8 @@ public class Item {
      *
      * @param link link contendo o item que iniciou a ligação e quem recebeu
      */
-    public void addLink(RecipeItem link) {
-        if (this.getIndexOfLinkOnLinkedTo(link) == -1) {            
+    public void addRecipeItem(RecipeItem link) {
+        if (this.getIndexOfRecipeItemOnLinkedTo(link) == -1) {            
             this.linkedTo.add(link);
         }
     }
@@ -133,9 +133,9 @@ public class Item {
      *
      * @param link link contendo o item que iniciou a ligação e quem recebeu
      */
-    public void receiveLink(RecipeItem link) {
-        if (this.getIndexOfLinkOnLinkedFrom(link) == -1) {            
-            this.linkedFrom.add(link);
+    public void receiveRecipeItem(RecipeItem link) {
+        if (this.getIndexOfRecipeItemOnLinkedFrom(link) == -1) {                
+            this.linkedFrom.add(link);            
         }
     }
 
@@ -144,8 +144,8 @@ public class Item {
      *
      * @param link link a ser deletado
      */
-    public void removeLinkFromLinkedFrom(RecipeItem link) {
-        int pos = this.getIndexOfLinkOnLinkedFrom(link);
+    public void removeRecipeItemFromLinkedFrom(RecipeItem link) {
+        int pos = this.getIndexOfRecipeItemOnLinkedFrom(link);
         if (pos != -1) {
             this.linkedFrom.remove(pos);
         }
@@ -156,7 +156,7 @@ public class Item {
      * @param link link a ser buscado
      * @return int
      */
-    private int getIndexOfLinkOnLinkedFrom(RecipeItem link) {
+    private int getIndexOfRecipeItemOnLinkedFrom(RecipeItem link) {
         for (RecipeItem linkedFrom : this.linkedFrom) {
             if (linkedFrom.getLinkOwner().getName().equals(link.getLinkOwner().getName())) {
                 return this.linkedFrom.indexOf(linkedFrom);
@@ -170,8 +170,8 @@ public class Item {
      *
      * @param link link a ser deletado
      */
-    public void removeLinkFromLinkedTo(RecipeItem link) {
-        int pos = this.getIndexOfLinkOnLinkedTo(link);
+    public void removeRecipeItemFromLinkedTo(RecipeItem link) {
+        int pos = this.getIndexOfRecipeItemOnLinkedTo(link);
         if (pos != -1) {
             this.linkedTo.remove(pos);
         }
@@ -183,7 +183,7 @@ public class Item {
      * @param link link a ser buscado
      * @return int
      */
-    private int getIndexOfLinkOnLinkedTo(RecipeItem link) {
+    private int getIndexOfRecipeItemOnLinkedTo(RecipeItem link) {
         for (RecipeItem linkedTo : this.linkedTo) {
             if (linkedTo.getLinkedWith().getName().equals(link.getLinkedWith().getName())) {
                 return this.linkedTo.indexOf(linkedTo);
@@ -224,30 +224,5 @@ public class Item {
         }
 
         return description;
-    }
-    /**
-     * Retorna o registro que representa os links que o item recebeu
-     * @return String
-     */
-    protected String createLinkedFromRegister() {
-        String linkedFromRegister = "";        
-        
-        for (RecipeItem link : this.getLinkedFrom()) {
-            linkedFromRegister = linkedFromRegister.concat(link.getLinkedWith().getName()).concat("/");
-        }
-        return linkedFromRegister;
-    }
-    /**
-     * Retorna o registro que representa os links que o item criou
-     * @return String
-     */
-    protected String createLinkedToRegister() {
-        String linkedToRegister = "";                
-
-        for (RecipeItem link : this.getLinkedTo()) {
-            linkedToRegister = linkedToRegister.concat(link.generateRegister().concat("/"));
-        }
-        
-        return linkedToRegister;
-    }
+    }            
 }

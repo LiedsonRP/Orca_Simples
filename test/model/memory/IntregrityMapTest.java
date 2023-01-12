@@ -17,13 +17,13 @@ import static org.junit.Assert.*;
  *
  * @author lieds
  */
-public class ItensMapTest {
+public class IntregrityMapTest {
 
-    public static ItensMap instance;
+    public static RelationMap instance;
 
     @Before
     public void setUp() {
-        instance = new ItensMap();
+        instance = new RelationMap();
     }
 
     @After
@@ -31,7 +31,7 @@ public class ItensMapTest {
     }
 
     /**
-     * Test of checkItemIsLinkedTo method, of class ItensMap.
+     * Test of checkItemIsLinkedTo method, of class RelationMap.
      */
     @Test
     public void testCheckItemIsLinkedTo() {
@@ -42,14 +42,14 @@ public class ItensMapTest {
         //Configura a massa
         Item massa = new Item("Massa");
         RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
-        massa.addLink(massa_manteiga);
-        manteiga.receiveLink(massa_manteiga);
+        massa.addRecipeItem(massa_manteiga);
+        manteiga.receiveRecipeItem(massa_manteiga);
 
         assertTrue("O itens não possuem ligação!", instance.checkItemIsLinkedTo(massa, manteiga));
     }
 
     /**
-     * Test of checkItemIsLinkedFrom method, of class ItensMap.
+     * Test of checkItemIsLinkedFrom method, of class RelationMap.
      */
     @Test
     public void testCheckItemIsLinkedFrom() {
@@ -60,14 +60,14 @@ public class ItensMapTest {
         Item massa = new Item("Massa");
         RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
 
-        massa.addLink(massa_manteiga);
-        manteiga.receiveLink(massa_manteiga);
+        massa.addRecipeItem(massa_manteiga);
+        manteiga.receiveRecipeItem(massa_manteiga);
 
         assertTrue("O itens não possuem ligação!", instance.checkItemIsLinkedTo(massa, manteiga));
     }
 
     /**
-     * Test of checkItensIsLinked method, of class ItensMap.
+     * Test of checkItensIsLinked method, of class RelationMap.
      */
     @Test
     public void testCheckItensIsLinked() {
@@ -79,14 +79,14 @@ public class ItensMapTest {
         Item massa = new Item("Massa");
         RecipeItem massa_manteiga = new RecipeItem(massa, manteiga);
 
-        massa.addLink(massa_manteiga);
-        manteiga.receiveLink(massa_manteiga);
+        massa.addRecipeItem(massa_manteiga);
+        manteiga.receiveRecipeItem(massa_manteiga);
 
         assertTrue("O itens não possuem ligação!", instance.checkItensIsLinked(massa, manteiga));
     }
 
     /**
-     * Test of addItem method, of class ItensMap.
+     * Test of addItem method, of class RelationMap.
      */
     @Test
     public void testAddItem() {
@@ -115,9 +115,9 @@ public class ItensMapTest {
             RecipeItem massa_leite = new RecipeItem(massa, leite);
             RecipeItem massa_embalagem = new RecipeItem(massa, embalagem);
 
-            massa.addLink(massa_manteiga);
-            massa.addLink(massa_embalagem);
-            massa.addLink(massa_leite);
+            massa.addRecipeItem(massa_manteiga);
+            massa.addRecipeItem(massa_embalagem);
+            massa.addRecipeItem(massa_leite);
 
             instance.addItem(massa);
 
@@ -140,7 +140,7 @@ public class ItensMapTest {
     }
 
     /**
-     * Test of getAllItens method, of class ItensMap.
+     * Test of getAllItens method, of class RelationMap.
      */
     @Test
     public void testGetAllItens() {
@@ -171,7 +171,7 @@ public class ItensMapTest {
     }
 
     /**
-     * Test of getItem method, of class ItensMap.
+     * Test of getItem method, of class RelationMap.
      */
     @Test
     public void testGetItem() {
@@ -196,7 +196,7 @@ public class ItensMapTest {
     }
 
     /**
-     * Test of deleteItem method, of class ItensMap.
+     * Test of deleteItem method, of class RelationMap.
      */
     @Test
     public void testDeleteItem() {
@@ -216,9 +216,9 @@ public class ItensMapTest {
         RecipeItem link2 = new RecipeItem(massa, leite);
         RecipeItem link3 = new RecipeItem(massa, embalagem);
 
-        massa.addLink(link1);
-        massa.addLink(link2);
-        massa.addLink(link3);
+        massa.addRecipeItem(link1);
+        massa.addRecipeItem(link2);
+        massa.addRecipeItem(link3);
 
         Item bolo = new Item("Bolo");
 
@@ -227,10 +227,10 @@ public class ItensMapTest {
         RecipeItem link6 = new RecipeItem(bolo, embalagem);
         RecipeItem link7 = new RecipeItem(bolo, massa);
 
-        bolo.addLink(link4);
-        bolo.addLink(link5);
-        bolo.addLink(link6);
-        bolo.addLink(link7);
+        bolo.addRecipeItem(link4);
+        bolo.addRecipeItem(link5);
+        bolo.addRecipeItem(link6);
+        bolo.addRecipeItem(link7);
 
         instance.addItem(massa);
         instance.addItem(bolo);
@@ -263,7 +263,7 @@ public class ItensMapTest {
     }
 
     /**
-     * Test of modifyItem method, of class ItensMap.
+     * Test of modifyItem method, of class RelationMap.
      */
     @Test
     public void testModifyItem() {
@@ -283,14 +283,14 @@ public class ItensMapTest {
         RecipeItem link2 = new RecipeItem(massa, leite);
         RecipeItem link3 = new RecipeItem(massa, embalagem);
 
-        massa.addLink(link1);
-        massa.addLink(link3);
+        massa.addRecipeItem(link1);
+        massa.addRecipeItem(link3);
 
         instance.addItem(massa);
 
         //Modificação de remoção de link
         Item newMassa1 = new Item("Massa");
-        newMassa1.removeLinkFromLinkedTo(link1);
+        newMassa1.removeRecipeItemFromLinkedTo(link1);
 
         instance.modifyItem(massa.getName(), newMassa1);
 
@@ -302,7 +302,7 @@ public class ItensMapTest {
 
         //Modificação de adicionar link
         Item newMassa2 = new Item("Massa");
-        newMassa2.addLink(link2);
+        newMassa2.addRecipeItem(link2);
         instance.modifyItem(massa.getName(), newMassa2);
 
         massa = instance.getItem("Massa");
@@ -318,9 +318,9 @@ public class ItensMapTest {
         RecipeItem link5 = new RecipeItem(newMassa3, leite);
         RecipeItem link6 = new RecipeItem(newMassa3, embalagem);
 
-        newMassa3.addLink(link4);
-        newMassa3.addLink(link5);
-        newMassa3.addLink(link6);
+        newMassa3.addRecipeItem(link4);
+        newMassa3.addRecipeItem(link5);
+        newMassa3.addRecipeItem(link6);
 
         massa = instance.getItem("Massa");
         instance.modifyItem(massa.getName(), newMassa3);
