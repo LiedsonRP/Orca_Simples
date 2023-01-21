@@ -34,6 +34,7 @@ public class RecipeItem{
      * @param linkOwner item que iniciou a ligação
      * @param linkedWith item que recebeu a ligação
      */
+    
     public RecipeItem(Item linkOwner, Item linkedWith) {        
         this.linkedWith = linkedWith;
         this.linkOwner = linkOwner;

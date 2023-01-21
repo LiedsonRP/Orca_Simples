@@ -97,7 +97,7 @@ public final class RelationMap {
     private void linkItens(RecipeItem link) {        
         if (this.isItemInMap(link.getLinkOwner()) && this.isItemInMap(link.getLinkedWith())) {//verifica se os itens existem
             if (!this.checkItensIsLinked(link.getLinkOwner(), link.getLinkedWith())) { //verifica se os itens já possuem uma ligação                               
-                link.getLinkedWith().receiveRecipeItem(link);                
+                link.getLinkedWith().receiveRecipeItem(link);          
             } else {
                 throw new IllegalArgumentException("Os itens já possuem ligação!");
             }
