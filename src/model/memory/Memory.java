@@ -58,6 +58,15 @@ public class Memory extends StorageTools {
         this.loadCompoundFoodstockRegisters();
         this.loadProductRegisters();
     }
+    
+    /**
+     * Verifica se um item existe no mapa de itens.
+     * @param itemName Nome do item a ser buscado
+     * @return Retorna true caso o item esteja no mapa e false caso não.
+     */
+    public boolean checkIfItemExists(String itemName) {
+        return itensMap.isItemInMap(itemName);
+    }
 
     /**
      * Adiciona um insumo simples na memória por meio do mapa de relacionamentos
@@ -406,5 +415,5 @@ public class Memory extends StorageTools {
         }
 
         return recipe;
-    }
+    }        
 }
