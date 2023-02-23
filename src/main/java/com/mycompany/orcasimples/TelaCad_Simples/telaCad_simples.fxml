@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="pane_ancora" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TelaCad_Simples.TelaCad_insumoSimplesController">
+    <stylesheets>
+        <URL value="@../Style/MenuStyle.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="34.0" layoutY="14.0" prefHeight="477.0" prefWidth="640.0" styleClass="bordas_pane" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="34.0">
+         <children>
+            <Text layoutX="49.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topicosText" text="Cadastro de Insumo Simples                        " wrappingWidth="521.13671875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <TextField layoutX="39.0" layoutY="124.0" prefHeight="35.0" prefWidth="541.0" styleClass="textFildPadrao" />
+            <Text layoutX="49.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Insumo" wrappingWidth="171.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField layoutX="382.0" layoutY="201.0" prefHeight="35.0" prefWidth="134.0" styleClass="adapitaButt" stylesheets="@../Style/MenuStyle.css" />
+            <ComboBox fx:id="cb_TiposInsumos" layoutX="39.0" layoutY="201.0" prefHeight="35.0" prefWidth="291.0">
+               <styleClass>
+                  <String fx:value="combobo" />
+                  <String fx:value="textFildPadrao" />
+               </styleClass></ComboBox>
+            <ComboBox fx:id="cb_UnidadeM" layoutX="516.0" layoutY="201.0" prefHeight="35.0" prefWidth="64.0" style="-fx-background-radius: 0px 100px 100px 0px;" styleClass="combobo" />
+            <Text layoutX="49.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Insumo" wrappingWidth="122.00000000000011">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="394.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade Comprada" wrappingWidth="192.0000000000001">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="49.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Gasto" wrappingWidth="122.00000000000011">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField layoutX="39.0" layoutY="279.0" prefHeight="35.0" prefWidth="291.0" styleClass="textFildPadrao" />
+            <Text layoutX="394.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custo Unitário" wrappingWidth="122.00000000000011">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField layoutX="376.0" layoutY="279.0" prefHeight="35.0" prefWidth="202.0" styleClass="textFildPadrao" />
+            <Button layoutX="49.0" layoutY="397.0" mnemonicParsing="false" onAction="#voltaMenu" prefHeight="35.0" prefWidth="159.0" styleClass="but_padrao" text="Cancelar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="411.0" layoutY="397.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="159.0" styleClass="but_padrao" text="Cadastrar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
