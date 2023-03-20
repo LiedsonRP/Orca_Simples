@@ -4,6 +4,7 @@ module com.mycompany.orcasimples {
     requires java.logging;
 
     opens com.mycompany.orcasimples to javafx.fxml;
+    opens com.mycompany.orcasimples.controllers to javafx.fxml;
     exports com.mycompany.orcasimples;
 }
     

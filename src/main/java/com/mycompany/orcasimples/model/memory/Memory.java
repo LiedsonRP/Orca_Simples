@@ -7,9 +7,7 @@ package com.mycompany.orcasimples.model.memory;
 import com.mycompany.orcasimples.model.util.StorageTools;
 import java.util.ArrayList;
 import com.mycompany.orcasimples.model.entities.CompoundFoodstock;
-import com.mycompany.orcasimples.model.entities.Item;
 import com.mycompany.orcasimples.model.entities.Product;
-import com.mycompany.orcasimples.model.entities.RecipeItem;
 import com.mycompany.orcasimples.model.entities.SimpleFoodstock;
 import com.mycompany.orcasimples.model.util.FileTools;
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="pane_ancora" stylesheets="@../Style/MenuStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TelaCad_embalagem.TelaCad_embalagemController">
+    <stylesheets>
+        <URL value="@telacad_embalagem.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="31.0" layoutY="30.0" prefHeight="438.0" prefWidth="698.0" styleClass="bordas_pane" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Text layoutX="283.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topicosText" text="Cadastro de Embalagem⠀⠀⠀⠀⠀⠀⠀⠀⠀" wrappingWidth="531.13671875">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="299.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da Embalagem" wrappingWidth="249.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="283.0" layoutY="159.0" prefHeight="33.0" prefWidth="606.0" styleClass="textFildPadrao" />
+            <Text layoutX="299.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade Comprada" wrappingWidth="249.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="283.0" layoutY="233.0" prefHeight="33.0" prefWidth="606.0" styleClass="textFildPadrao" />
+            <Text layoutX="299.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor gasto" wrappingWidth="249.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="283.0" layoutY="334.0" prefHeight="33.0" prefWidth="318.0" styleClass="textFildPadrao" />
+            <TextField layoutX="668.0" layoutY="334.0" prefHeight="33.0" prefWidth="221.0" styleClass="textFildPadrao" />
+            <Text layoutX="674.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custo unidatário" wrappingWidth="139.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="ButVolta" layoutX="283.0" layoutY="416.0" mnemonicParsing="false" onAction="#voltaMenu" prefHeight="44.0" prefWidth="171.0" styleClass="but_padrao" text="Cancelar">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="712.0" layoutY="416.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="171.0" styleClass="but_padrao" text="Cadastrar">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

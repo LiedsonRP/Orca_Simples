@@ -4,6 +4,8 @@
  */
 package com.mycompany.orcasimples.model.entities;
 
+import com.mycompany.orcasimples.model.memory.Item;
+
 /**
  * Classe que representa os produtos.
  * @author lieds

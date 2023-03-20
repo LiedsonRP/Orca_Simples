@@ -7,7 +7,7 @@ package com.mycompany.orcasimples.model.util;
 import java.util.ArrayList;
 import com.mycompany.orcasimples.model.entities.CompoundFoodstock;
 import com.mycompany.orcasimples.model.entities.Product;
-import com.mycompany.orcasimples.model.entities.RecipeItem;
+import com.mycompany.orcasimples.model.memory.RecipeItem;
 import com.mycompany.orcasimples.model.entities.SimpleFoodstock;
 
 /**

@@ -1,0 +1,30 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20 de mar. de 2023, 14:51:14
+    Author     : liedson.pereira
+*/
+
+.titled-pane > .title {
+    -fx-background-color: #005A60;
+    -fx-border: 1px solid white
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: white;
+}
+
+.menuButton {
+    -fx-background-color:  #00474C;
+    -fx-text-alignment:left;
+    -fx-border-radius: 0;
+    -fx-padding: 20px;
+    -fx-alignment:left;
+    -fx-font-size:20px;
+}
+
+.menuButton:hover {
+    -fx-background-color: #0bcbd9;
+}

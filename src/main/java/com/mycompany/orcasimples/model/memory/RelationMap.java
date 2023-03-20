@@ -4,8 +4,6 @@
  */
 package com.mycompany.orcasimples.model.memory;
 
-import com.mycompany.orcasimples.model.entities.Item;
-import com.mycompany.orcasimples.model.entities.RecipeItem;
 import java.util.ArrayList;
 import java.util.HashMap;
 
