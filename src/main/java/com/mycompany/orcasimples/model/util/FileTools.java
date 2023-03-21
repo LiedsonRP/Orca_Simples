@@ -85,4 +85,13 @@ public class FileTools {
         }
         
     }
+    
+    /**
+     * Converte uma caminho de arquivo numa String comum
+     * @param file_path caminho do arquivo
+     * @return String
+     */
+    public static String convertFilePathToString(String file_path) {
+        return Paths.get(file_path).toString();
+    }
 }

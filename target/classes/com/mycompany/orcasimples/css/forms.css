@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21 de mar. de 2023, 17:35:56
+    Author     : liedson.pereira
+*/
+
+.anchorForm {
+    -fx-background-color: #005A60;
+    -fx-pref-width: 100%
+}
+
+.formPane {
+    -fx-background-color: #E4EFF0;
+    -fx-background-radius: 34px
+}

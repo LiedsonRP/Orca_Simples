@@ -1,15 +1,14 @@
 package com.mycompany.orcasimples.controllers;
 
-import com.mycompany.orcasimples.App;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import com.mycompany.orcasimples.model.util.FxmlTools;
+import com.mycompany.orcasimples.model.util.FileTools;
+import java.io.IOException;
+import java.net.URL;
 import javafx.scene.Parent;
-import javafx.scene.SubScene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class MenuOrcaController {
 
@@ -35,23 +34,14 @@ public class MenuOrcaController {
     private Button btnShowProdTable;
 
     @FXML
-    private Button btnShowSimpleFoodstock;
-
-    @FXML
-    private SubScene subScene;
+    private Button btnShowSimpleFoodstock;    
     
     @FXML
-    public void setSimpleFoodsctockCadScene(MouseEvent event) {   
-        try {
-            subScene = new SubScene(loadFXML("../telaCad_simples"), 0, 0);
-        } catch (IOException ex) {
-            Logger.getLogger(MenuOrcaController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+    private AnchorPane subScene;
 
+    @FXML
+    void setSimpleFoodsctockCadScene(MouseEvent event) throws IOException {                       
+        Parent node = FxmlTools.loadFXML("telaCad_simples");
+        subScene.getChildren().add(node);
+    }
 }

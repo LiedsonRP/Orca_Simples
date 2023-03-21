@@ -5,6 +5,7 @@
 package com.mycompany.orcasimples;
 
 import javafx.application.Application;
+import com.mycompany.orcasimples.model.util.FxmlTools;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,19 +22,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("MenuOrca"), 640, 480);
+        scene = new Scene(FxmlTools.loadFXML("MenuOrca"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+        scene.setRoot(FxmlTools.loadFXML(fxml));
+    }    
 
     public static void main(String[] args) {
         launch();
