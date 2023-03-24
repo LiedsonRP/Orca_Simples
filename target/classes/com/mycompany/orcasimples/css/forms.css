@@ -9,10 +9,41 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .anchorForm {
     -fx-background-color: #005A60;
-    -fx-pref-width: 100%
 }
 
 .formPane {
     -fx-background-color: #E4EFF0;
     -fx-background-radius: 34px
+}
+
+.mainTitle {
+    -fx-text-fill: #005A60;
+    -fx-font-size: 30px;
+}
+
+.textFildPadrao {
+    -fx-background-radius: 100px;
+    -fx-background-color: #FEFEFE;
+}
+
+.selectUnitMeasurement {
+    -fx-background-radius:  0px 100px 100px 0px;
+    -fx-background-color: #FEFEFE;    
+}
+
+.normalSelect {
+    -fx-background-color: #FEFEFE;
+    -fx-background-radius: 100px;
+}
+
+.onSubmitButton {
+    -fx-background-color: #82BAAD;
+    -fx-text-fill: white;
+    -fx-background-radius: 100px;
+    -fx-font-size: 20px;
+}
+
+.onSubmitButton:hover {
+    -fx-cursor:hand;
+    -fx-background-color: #557c73;
 }

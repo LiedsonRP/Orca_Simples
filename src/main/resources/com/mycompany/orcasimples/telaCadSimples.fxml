@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="1000.0" styleClass="anchorForm" stylesheets="@css/forms.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="formPane" layoutX="53.0" layoutY="30.0" prefHeight="491.0" prefWidth="900.0" styleClass="formPane" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <GridPane alignment="TOP_CENTER" layoutX="86.0" layoutY="57.0" prefHeight="402.0" prefWidth="729.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="452.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="242.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="68.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="2.0" prefHeight="12.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="92.0" minHeight="5.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="7.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="95.0" minHeight="3.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="117.0" minHeight="8.0" prefHeight="117.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mainTitle" text="Cadastro de Insumo Simples" wrappingWidth="521.13671875">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <TextField prefHeight="38.0" prefWidth="534.0" styleClass="textFildPadrao" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Insumo" wrappingWidth="171.0" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Insumo" wrappingWidth="122.00000000000011" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="cb_TiposInsumos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="385.0" styleClass="normalSelect" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade Comprada" wrappingWidth="192.0000000000001" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="243.0" styleClass="textFildPadrao" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="cb_UnidadeM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="64.0" styleClass="selectUnitMeasurement" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Gasto" wrappingWidth="122.00000000000011" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Custo Unitário" wrappingWidth="122.00000000000011" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="385.0" styleClass="textFildPadrao" GridPane.rowIndex="7" />
+                  <TextField prefHeight="39.0" prefWidth="288.0" styleClass="textFildPadrao" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="159.0" styleClass="onSubmitButton" text="Cancelar" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Line endX="336.29290771484375" endY="0.6568458676338196" startX="-100.0" style="-fx-fill: #005A60;" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="159.0" styleClass="onSubmitButton" text="Cadastrar" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets left="24.0" right="35.0" top="199.0" />
+               </opaqueInsets>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
